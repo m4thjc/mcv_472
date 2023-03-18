@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Mvc_472_PortfolioC.Models;
+using JMBusinessLayer;
 
 namespace Mvc_472_PortfolioC.Controllers
 {
@@ -11,50 +12,44 @@ namespace Mvc_472_PortfolioC.Controllers
     {
         public ActionResult Index(int? departmentId)
         {
-            List<Employee> employee;
-
-            EmployeeContext employeeContext = new EmployeeContext();
-
-            if(departmentId != null)
+            bool useBuisnessLibrary = true;
+            List<Employee> employees;
+            if (useBuisnessLibrary)
             {
-                employee = employeeContext.Employees.Where(e => e.DepartmentID == departmentId).ToList();
+                employees = GetEmployeeListFromBusinessLayer();
             }
             else
             {
-                employee = employeeContext.Employees.ToList();
+                EmployeeContext employeeContext = new EmployeeContext();
+                employees = employeeContext.Employees.ToList();
             }
+
+            
+
+            if(departmentId != null)
+            {
+                employees = employees.Where(e => e.DepartmentID == departmentId).ToList();
+            }
+            
             
 
 
-            //Employee Employee = new Employee()
-            //{
-            //    EmployeeId = 101,
-            //    Name = "John",
-            //    Gender = "Male",
-            //    City = "London"
-            //};
 
-            return View(employee);
+
+            return View(employees);
         }
 
-        //public ActionResult Index(int departmentId)
-        //{
-        //    EmployeeContext employeeContext = new EmployeeContext();
-        //    List<Employee> employee = employeeContext.Employees.Where(e => e.DepartmentID == departmentId).ToList();
+        public List<Employee> GetEmployeeListFromBusinessLayer()
+        {
+            List<Employee> employees;
 
+            EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
 
-        //    //Employee Employee = new Employee()
-        //    //{
-        //    //    EmployeeId = 101,
-        //    //    Name = "John",
-        //    //    Gender = "Male",
-        //    //    City = "London"
-        //    //};
+            employees = employeeBusinessLayer.Employees.Select(be => new Employee(be.EmployeeId, be.Name,be.Gender, be.City, be.DepartmentID)).ToList();
 
-        //    return View(employee);
-        //}
+            return employees;
+        }
 
-        // GET: Employee
 
         public ActionResult Details(int id)
         {
