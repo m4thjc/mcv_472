@@ -41,7 +41,7 @@ namespace Mvc_472_PortfolioC.Controllers
 
             EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
 
-            employees = employeeBusinessLayer.Employees.Select(be => new Employee(be.EmployeeId, be.Name,be.Gender, be.City, be.DepartmentID)).ToList();
+            employees = employeeBusinessLayer.Employees.Select(be => new Employee(be.EmployeeId, be.Name,be.Gender, be.City, be.DepartmentID, be.DateOfBirth)).ToList();
 
             return employees;
         }
@@ -58,7 +58,7 @@ namespace Mvc_472_PortfolioC.Controllers
         public ActionResult CreatePost()
         {
             BuisnessLibEmployee employee = new BuisnessLibEmployee();
-            UpdateModel(employee);
+            TryUpdateModel(employee);
 
             if (ModelState.IsValid)
             {
@@ -75,16 +75,16 @@ namespace Mvc_472_PortfolioC.Controllers
             EmployeeContext employeeContext = new EmployeeContext();
             Employee employee = employeeContext.Employees.Where(x=> x.EmployeeId == id).FirstOrDefault();
 
-
-            //Employee Employee = new Employee()
-            //{
-            //    EmployeeId = 101,
-            //    Name = "John",
-            //    Gender = "Male",
-            //    City = "London"
-            //};
-
             return View(employee);
         }
+        [HttpGet]
+        public ActionResult Edit(int Id)
+        {
+            var AllEmployees = GetEmployeeListFromBusinessLayer();
+            EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+            Employee employee = AllEmployees.Single(emp => emp.EmployeeId == Id);
+            return View(employee);
+        }
+
     }
 }

@@ -33,7 +33,12 @@ namespace JMBusinessLayer
                         employee.Name = rdr["Name"].ToString();
                         employee.Gender = rdr["Gender"].ToString();
                         employee.City = rdr["City"].ToString();
-                        employee.DepartmentID = Convert.ToInt32(rdr["DepartmentID"]);
+                        employee.DepartmentID = Convert.ToInt32(rdr["DepartmentId"]);
+                        if(!(rdr["DateOfBirth"]is DBNull))
+                        {
+                            employee.DateOfBirth = Convert.ToDateTime(rdr["DateOfBirth"]);
+                        }
+                        
                         employees.Add(employee);
                     }
                 
@@ -76,6 +81,11 @@ namespace JMBusinessLayer
                 paramDepartmentId.ParameterName = "@DepartmentId";
                 paramDepartmentId.Value = employee.DepartmentID;
                 cmd.Parameters.Add(paramDepartmentId);
+
+                SqlParameter paramDateOfBirth = new SqlParameter();
+                paramDateOfBirth.ParameterName = "@DateOfBirth";
+                paramDateOfBirth.Value = employee.DateOfBirth;
+                cmd.Parameters.Add(paramDateOfBirth);
 
                 con.Open();
                 cmd.ExecuteNonQuery();
