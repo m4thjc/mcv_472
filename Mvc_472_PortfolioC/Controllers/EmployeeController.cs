@@ -12,7 +12,7 @@ namespace Mvc_472_PortfolioC.Controllers
     {
         public ActionResult Index(int? departmentId)
         {
-            bool useBuisnessLibrary = true;
+            bool useBuisnessLibrary = false;
             List<Employee> employees;
             if (useBuisnessLibrary)
             {
@@ -30,11 +30,7 @@ namespace Mvc_472_PortfolioC.Controllers
             {
                 employees = employees.Where(e => e.DepartmentID == departmentId).ToList();
             }
-            
-            
-
-
-
+       
 
             return View(employees);
         }
@@ -50,6 +46,29 @@ namespace Mvc_472_PortfolioC.Controllers
             return employees;
         }
 
+        [HttpGet]
+        [ActionName("Create")]
+        public ActionResult CreateGet()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("Create")]
+        public ActionResult CreatePost()
+        {
+            BuisnessLibEmployee employee = new BuisnessLibEmployee();
+            UpdateModel(employee);
+
+            if (ModelState.IsValid)
+            {
+                EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+                employeeBusinessLayer.AddEmployee(employee);
+
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
 
         public ActionResult Details(int id)
         {

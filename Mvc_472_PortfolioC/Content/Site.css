@@ -16,6 +16,18 @@
     white-space: normal;
 }
 
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    color: FF5733;
+    background-color: FF5733;
+    border-color: FF5733;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
