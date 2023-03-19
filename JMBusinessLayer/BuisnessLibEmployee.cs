@@ -7,7 +7,16 @@ using System.Threading.Tasks;
 
 namespace JMBusinessLayer
 {
-    public class BuisnessLibEmployee
+
+    public interface IEmployee
+    {
+        int EmployeeId { get; set; }
+        string Gender { get; set; }
+        string City { get; set; }
+        int DepartmentID { get; set; }
+        DateTime? DateOfBirth { get; set; }
+    }
+    public class BuisnessLibEmployee: IEmployee
     {
         [Required]
         public int EmployeeId { get; set; }
