@@ -78,12 +78,38 @@ namespace Mvc_472_PortfolioC.Controllers
             return View(employee);
         }
         [HttpGet]
-        public ActionResult Edit(int Id)
+        [ActionName("Edit")]
+        public ActionResult EditGet(int Id)
         {
             var AllEmployees = GetEmployeeListFromBusinessLayer();
             EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
             Employee employee = AllEmployees.Single(emp => emp.EmployeeId == Id);
             return View(employee);
+        }
+
+        [HttpPost]
+        [ActionName("Edit")]
+        public ActionResult EditPost(int id)
+        {
+            //Create a buisness lib employee
+            EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+            var employee = employeeBusinessLayer.Employees.Single(emp => emp.EmployeeId == id);
+
+            UpdateModel(employee, new string[] {"EmployeeId", "Gender", "City", "DepartmentId", "DateOfBirth" });
+                        
+            if (ModelState.IsValid)
+            {
+                
+                employeeBusinessLayer.SaveEmployee(employee);
+
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return View();
+            }
+
         }
 
     }
