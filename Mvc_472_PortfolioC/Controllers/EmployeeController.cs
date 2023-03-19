@@ -89,18 +89,25 @@ namespace Mvc_472_PortfolioC.Controllers
 
         [HttpPost]
         [ActionName("Edit")]
-        public ActionResult EditPost(int id)
+        public ActionResult EditPost([Bind(Include="EmployeeId, Gender, City, DepartmentId, DateOfBirth")] Employee employee)
         {
             //Create a buisness lib employee
             EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
-            var employee = employeeBusinessLayer.Employees.Single(emp => emp.EmployeeId == id);
+            employee.Name = employeeBusinessLayer.Employees.Single(emp => emp.EmployeeId == employee.DepartmentID).Name;
 
-            UpdateModel(employee, new string[] {"EmployeeId", "Gender", "City", "DepartmentId", "DateOfBirth" });
-                        
+            BuisnessLibEmployee bisEmp = new BuisnessLibEmployee() { 
+                                                                    EmployeeId = employee.EmployeeId, 
+                                                                    Name = employee.Name, 
+                                                                    City = employee.City, 
+                                                                    Gender = employee.Gender, 
+                                                                    DepartmentID = employee.DepartmentID, 
+                                                                    DateOfBirth = employee.DateOfBirth 
+                                                                };
+                       
             if (ModelState.IsValid)
             {
                 
-                employeeBusinessLayer.SaveEmployee(employee);
+                employeeBusinessLayer.SaveEmployee(bisEmp);
 
                 return RedirectToAction("Index");
 
