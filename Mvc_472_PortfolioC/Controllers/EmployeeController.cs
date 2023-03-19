@@ -87,6 +87,7 @@ namespace Mvc_472_PortfolioC.Controllers
             return View(employee);
         }
 
+
         [HttpPost]
         [ActionName("Edit")]
         public ActionResult EditPost(int id)
@@ -110,6 +111,14 @@ namespace Mvc_472_PortfolioC.Controllers
                 return View();
             }
 
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+            employeeBusinessLayer.DeleteEmployee(id);
+            return RedirectToAction("Index");
         }
 
     }

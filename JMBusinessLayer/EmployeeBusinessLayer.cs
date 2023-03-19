@@ -99,8 +99,6 @@ namespace JMBusinessLayer
         {
             string connectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
 
-            List<BuisnessLibEmployee> employees = new List<BuisnessLibEmployee>();
-
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand("spSaveEmployee", con);
@@ -142,6 +140,28 @@ namespace JMBusinessLayer
             }
 
 
+        }
+
+        public void DeleteEmployee(int id)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+
+            List<BuisnessLibEmployee> employees = new List<BuisnessLibEmployee>();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("spDeleteEmployee", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter paramID = new SqlParameter();
+                paramID.ParameterName = "@EmployeeId";
+                paramID.Value = id;
+                cmd.Parameters.Add(paramID);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+            }
         }
     }
 }

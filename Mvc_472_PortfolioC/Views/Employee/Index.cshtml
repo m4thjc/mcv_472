@@ -31,28 +31,33 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartmentID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOfBirth)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.EmployeeId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeId })
-            </td>
-        </tr>
+        using (Html.BeginForm("Delete", "Employee", new { id = item.EmployeeId }))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartmentID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeId }) |
+                    @*@Html.ActionLink("Details", "Details", new { id = item.EmployeeId }) |*@
+                    @*@Html.ActionLink("Delete", "Delete", new { id = item.EmployeeId })*@
+                    <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete record with ID = @item.EmployeeId');" />
+
+                </td>
+            </tr>
+        }
     }
 
 </table>
