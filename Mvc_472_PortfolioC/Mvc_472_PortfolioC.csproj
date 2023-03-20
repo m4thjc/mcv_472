@@ -136,6 +136,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\EfCustDepartment.cs" />
     <Compile Include="Models\EfDepartment.cs">
       <DependentUpon>EfEmployeeDataModel.tt</DependentUpon>
     </Compile>
