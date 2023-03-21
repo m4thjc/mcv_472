@@ -21,6 +21,16 @@ namespace Mvc_472_PortfolioC.Controllers
             return View(efEmployees.ToList());
         }
 
+        public ActionResult EmployeesByDepartment()
+        {
+            var efDepartmentTotals = db.EfEmployees.Include(e => e.EfDepartment)
+                .GroupBy(emp => emp.EfDepartment.Name)
+                .Select(e=> new efDepartmentTotals
+                    {Name = e.Key, Total = e.Count()}).ToList().OrderBy(y => y.Total);
+
+            return View(efDepartmentTotals);
+        }
+
         // GET: EfEmployees/Details/5
         public ActionResult Details(int? id)
         {

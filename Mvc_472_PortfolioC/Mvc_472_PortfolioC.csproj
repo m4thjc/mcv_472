@@ -141,6 +141,7 @@
     <Compile Include="Models\EfDepartment.cs">
       <DependentUpon>EfEmployeeDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\efDepartmentTotals.cs" />
     <Compile Include="Models\EfEmployee.cs">
       <DependentUpon>EfEmployeeDataModel.tt</DependentUpon>
     </Compile>
@@ -226,6 +227,7 @@
     <Content Include="Views\EfEmployees\Details.cshtml" />
     <Content Include="Views\EfEmployees\Edit.cshtml" />
     <Content Include="Views\EfEmployees\Index.cshtml" />
+    <Content Include="Views\EfEmployees\EmployeesByDepartment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
