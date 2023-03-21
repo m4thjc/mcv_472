@@ -50,6 +50,11 @@ namespace Mvc_472_PortfolioC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Name,Gender,City,DepartmentId,EmployeeId,DateOfBirth")] EfEmployee efEmployee)
         {
+            if (string.IsNullOrEmpty(efEmployee.Name))
+            {
+                ModelState.AddModelError("Name", "The Name field is required");
+            }
+
             if (ModelState.IsValid)
             {
                 db.EfEmployees.Add(efEmployee);
@@ -82,16 +87,25 @@ namespace Mvc_472_PortfolioC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Name,Gender,City,DepartmentId,EmployeeId,DateOfBirth")] EfEmployee efEmployee)
+        public ActionResult Edit([Bind(Include = "Gender,City,DepartmentId,EmployeeId,DateOfBirth")] EfEmployee efEmployee)
         {
+            EfEmployee employeeFromDb = db.EfEmployees.Single(x => x.EmployeeId == efEmployee.EmployeeId);
+            efEmployee.Name = employeeFromDb.Name;
+
+            employeeFromDb.Gender = efEmployee.Gender;
+            employeeFromDb.City = efEmployee.City;
+            employeeFromDb.DepartmentId = efEmployee.DepartmentId;
+            employeeFromDb.DateOfBirth = efEmployee.DateOfBirth;
+
+            efEmployee.Name = employeeFromDb.Name;
             if (ModelState.IsValid)
             {
-                db.Entry(efEmployee).State = EntityState.Modified;
+                db.Entry(employeeFromDb).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DepartmentId = new SelectList(db.EfDepartments, "Id", "Name", efEmployee.DepartmentId);
-            return View(efEmployee);
+            ViewBag.DepartmentId = new SelectList(db.EfDepartments, "Id", "Name", employeeFromDb.DepartmentId);
+            return View(employeeFromDb);
         }
 
         // GET: EfEmployees/Delete/5

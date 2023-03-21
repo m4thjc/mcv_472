@@ -13,7 +13,6 @@ namespace Mvc_472_PortfolioC.Models
 
     public class EfEmployeeMetaData
     {
-        [Required]
         public string Name { get; set; }
 
         [Required]
