@@ -15,6 +15,9 @@ namespace Mvc_472_PortfolioC.Controllers
             EmployeeContext employeeContext = new EmployeeContext();
              
             List<Department> departments = employeeContext.Departments.ToList();
+
+            ViewBag.Departments = new SelectList(departments, "ID", "Name");
+
             return View(departments);
         }
     }
