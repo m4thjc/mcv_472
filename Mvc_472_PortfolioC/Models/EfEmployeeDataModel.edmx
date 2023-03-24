@@ -4,13 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SampleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SampleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblDepartment">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Name" Type="varchar(max)" />
+          <Property Name="IsSelected" Type="bit" />
         </EntityType>
         <EntityType Name="tblEmployee">
           <Key>
@@ -43,8 +44,7 @@
             <End Role="tblEmployee" EntitySet="tblEmployee" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SampleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -55,6 +55,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="EfEmployees" Relationship="Self.FK__tblEmploy__Depar__2A4B4B5E" FromRole="tblDepartment" ToRole="tblEmployee" />
+          <Property Name="IsSelected" Type="Boolean" />
         </EntityType>
         <EntityType Name="EfEmployee">
           <Key>
@@ -97,6 +98,7 @@
           <EntitySetMapping Name="EfDepartments">
             <EntityTypeMapping TypeName="SampleModel.EfDepartment">
               <MappingFragment StoreEntitySet="tblDepartment">
+                <ScalarProperty Name="IsSelected" ColumnName="IsSelected" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
