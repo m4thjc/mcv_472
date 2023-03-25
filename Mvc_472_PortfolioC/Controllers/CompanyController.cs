@@ -18,10 +18,28 @@ namespace Mvc_472_PortfolioC.Controllers
             return View();
         }
 
-        public ActionResult Index1()
+        [HttpGet]
+        [ActionName("Index1")]
+        public ActionResult Index1Get()
         {
             var company = new Company("JohnsCompany");
             return View(company);
         }
+
+        [HttpPost]
+        [ActionName("Index1")]
+        public string Index1(Company company)
+        {
+            if (string.IsNullOrEmpty(company.SelectedDepartment))
+            {
+                return "You did not select any departments";
+            }
+            else
+            {
+                return "You selected department with ID = " + company.SelectedDepartment ; 
+            }
+        }
+
+
     }
 }
