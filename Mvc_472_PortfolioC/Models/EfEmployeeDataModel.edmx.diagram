@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="SampleModel.EfDepartment" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SampleModel.EfEmployee" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="SampleModel.FK__tblEmploy__Depar__2A4B4B5E" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SampleModel.City" Width="1.5" PointX="0.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

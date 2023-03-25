@@ -27,5 +27,6 @@ namespace Mvc_472_PortfolioC.Models
     
         public virtual DbSet<EfDepartment> EfDepartments { get; set; }
         public virtual DbSet<EfEmployee> EfEmployees { get; set; }
+        public virtual DbSet<City> Cities { get; set; }
     }
 }
