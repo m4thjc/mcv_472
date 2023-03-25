@@ -131,6 +131,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EfEmployeesController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\EfCustDepartment.cs" />
     <Compile Include="Models\EfCustEmployee.cs" />
@@ -231,6 +233,8 @@
     <Content Include="Views\EfEmployees\Edit.cshtml" />
     <Content Include="Views\EfEmployees\Index.cshtml" />
     <Content Include="Views\EfEmployees\EmployeesByDepartment.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Company\Index1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
