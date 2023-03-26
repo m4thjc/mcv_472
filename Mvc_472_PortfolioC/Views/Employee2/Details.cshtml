@@ -1,0 +1,79 @@
+﻿@model Mvc_472_PortfolioC.Models.Employee2
+@{
+    ViewBag.Title = "Details";
+}
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee Details</h4>
+    <hr />
+    <table class="table" style="font-family:Arial">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HireDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonalWebSite)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.HireDate)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.PersonalWebSite)
+            </td>
+        </tr>
+        </table>
+    @Html.DisplayForModel()
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeId }) |*@
+    @*@Html.ActionLink("Back to List", "Index", "Employee", new { DepartmentId = @Model.Id }, null) |
+    @Html.ActionLink("To full List", "Index", "Employee") |
+    @Html.ActionLink("Back to List", "Index") |*@
+</p>
+
+
