@@ -146,6 +146,7 @@
       <DependentUpon>EfEmployeeDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\Company2.cs" />
     <Compile Include="Models\CustEmployee2.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\EfCustDepartment.cs" />
@@ -280,6 +281,7 @@
     <Content Include="Views\City\EditorTemplates\City.cshtml" />
     <Content Include="Views\City\Index.cshtml" />
     <Content Include="Views\Employee2\Details.cshtml" />
+    <Content Include="Views\Employee2\CompanyDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

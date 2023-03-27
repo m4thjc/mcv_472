@@ -18,9 +18,19 @@ namespace Mvc_472_PortfolioC.Controllers
         // GET: Employee2/Details/5
         public ActionResult Details(int Id)
         {
+            
             Sample2 dbContext = new Sample2();
             var employee = dbContext.Employee2.Single(x => x.Id == Id);
             return View(employee);
+        }
+
+        public ActionResult CompanyDetails()
+        {
+            Company2 company2 = new Company2();
+            var test = company2.CompanyDirector;
+
+
+            return View(company2);
         }
 
         // GET: Employee2/Create

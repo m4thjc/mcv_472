@@ -8,10 +8,12 @@ using System.Web;
 namespace Mvc_472_PortfolioC.Models
 {
     [MetadataType(typeof(Employee2MetaData))]
+    [DisplayColumn("FullName")]
     public partial class Employee2
     {
         
     }
+   
     public class Employee2MetaData
     {
         [Display(Name = "Full Name")]
@@ -23,8 +25,16 @@ namespace Mvc_472_PortfolioC.Models
         [DisplayFormat(NullDisplayText ="Gender not specifed")]
         public string Gender { get; set; }
 
+        [DataType(DataType.Currency)]
         [ScaffoldColumn(false)]
         public int? Salary { get; set; }
+
+        [DataType(DataType.EmailAddress)]
+        public string EmailAddress { get; set; }
+
+
+        [DataType(DataType.Url)]
+        public string PersonalWebSite { get; set; }
     }
 
 }
