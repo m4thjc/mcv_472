@@ -4,6 +4,24 @@
     ViewBag.Title = "Edit";
 }
 
+<div class="form-group">
+    <label asp-for="RegisterDate" class="control-label"></label>
+    <input asp-for="RegisterDate" id="datepicker" type="text" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-ddThh:mm")" />
+    <span asp-validation-for="RegisterDate" class="text-danger"></span>
+</div>
+@*https://stackoverflow.com/questions/62049179/how-to-use-datepicker-on-mvc-core-in-asp-form/62056141#62056141*@
+@section Scripts
+{
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("input:text.date").datepicker();
+        });
+    </script>
+}
+
 <h2>Edit</h2>
 
 @using (Html.BeginForm())
@@ -11,7 +29,7 @@
     @Html.EditorForModel()
     <br />
     <br />
-    <input type="submit" value ="Save" />
+    <input type="submit" value="Save" />
     @*@Html.AntiForgeryToken()
 
         <div class="form-horizontal">
