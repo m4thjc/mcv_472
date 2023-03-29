@@ -24,6 +24,15 @@ namespace Mvc_472_PortfolioC.Controllers
             return View(employee);
         }
 
+        public ActionResult DetailsAlt(int Id)
+        {
+
+            Sample2 dbContext = new Sample2();
+            var employee = dbContext.Employee2.Single(x => x.Id == Id);
+            ViewData["Employee2Data"] = employee;
+            return View(employee);
+        }
+
         public ActionResult CompanyDetails()
         {
             Company2 company2 = new Company2();

@@ -284,6 +284,7 @@
     <Content Include="Views\Employee2\CompanyDetails.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\OpenInNewWindow.cshtml" />
     <Content Include="Views\Employee2\Edit.cshtml" />
+    <Content Include="Views\Employee2\EditAlt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
