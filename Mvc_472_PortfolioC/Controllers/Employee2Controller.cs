@@ -58,23 +58,31 @@ namespace Mvc_472_PortfolioC.Controllers
         // GET: Employee2/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Sample2 dbContext = new Sample2();
+            var employee = dbContext.Employee2.Single(x => x.Id == id);
+            return View(employee);
         }
 
         // POST: Employee2/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Employee2 employee)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                Sample2 db = new Sample2();
+                Employee2 employeeFromDb = db.Employee2.Single(x => x.Id == employee.Id);
 
-                return RedirectToAction("Index");
+                employeeFromDb.FullName = employee.FullName;
+                employeeFromDb.Gender = employee.Gender;
+                employeeFromDb.Age = employee.Age;
+                employeeFromDb.HireDate = employee.HireDate;
+                employeeFromDb.Salary = employee.Salary;
+                employeeFromDb.PersonalWebSite = employee.PersonalWebSite;
+
+                db.SaveChanges();
+                return RedirectToAction("Details", new { id = employee.Id });
             }
-            catch
-            {
-                return View();
-            }
+            return View(employee);
         }
 
         // GET: Employee2/Delete/5
