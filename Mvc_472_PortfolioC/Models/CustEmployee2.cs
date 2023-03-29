@@ -34,6 +34,7 @@ namespace Mvc_472_PortfolioC.Models
 
 
         [DataType(DataType.Url)]
+        [UIHint("OpenInNewWindow")]
         public string PersonalWebSite { get; set; }
     }
 

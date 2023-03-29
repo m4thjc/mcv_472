@@ -282,6 +282,7 @@
     <Content Include="Views\City\Index.cshtml" />
     <Content Include="Views\Employee2\Details.cshtml" />
     <Content Include="Views\Employee2\CompanyDetails.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\OpenInNewWindow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
