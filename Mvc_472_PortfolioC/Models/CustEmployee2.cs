@@ -23,7 +23,7 @@ namespace Mvc_472_PortfolioC.Models
         [Display(Name = "Full Name")]
         public string FullName { get; set; }
 
-        [DisplayFormat(DataFormatString ="{0:dd/MM/yy}")]
+        [DisplayFormat(DataFormatString ="{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime HireDate { get; set; }
 
         [DisplayFormat(NullDisplayText ="Gender not specifed")]
