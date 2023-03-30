@@ -1,4 +1,5 @@
-﻿@model Mvc_472_PortfolioC.Models.Employee2
+﻿@using Mvc_472_PortfolioC.CustomHtmlHelpers
+@model Mvc_472_PortfolioC.Models.Employee2 
 @{
     ViewBag.Title = "Details";
 }
@@ -68,7 +69,8 @@
         </tr>
         </table>
     <div>
-        <img src="@Url.Content(@Model.Photo)" alt="@Model.AlternateText" />
+        @Html.Image(@Model.Photo, @Model.AlternateText)
+        @*<img src="@Url.Content(@Model.Photo)" alt="@Model.AlternateText" />*@
     </div>
     @Html.DisplayForModel()
 </div>
