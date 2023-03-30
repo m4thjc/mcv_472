@@ -26,5 +26,8 @@ namespace Mvc_472_PortfolioC.Models
         }
     
         public virtual DbSet<Employee2> Employee2 { get; set; }
+        public virtual DbSet<tblCity> tblCities { get; set; }
+        public virtual DbSet<tblDepartment> tblDepartments { get; set; }
+        public virtual DbSet<tblEmployee> tblEmployees { get; set; }
     }
 }

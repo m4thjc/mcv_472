@@ -193,6 +193,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SampleDataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\tblCity.cs">
+      <DependentUpon>SampleDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblDepartment.cs">
+      <DependentUpon>SampleDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblEmployee.cs">
+      <DependentUpon>SampleDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +233,7 @@
       <DependentUpon>SampleDataModel.edmx</DependentUpon>
       <LastGenOutput>SampleDataModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Photos\JohnSmith.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\EfEmployeeDataModel.edmx">

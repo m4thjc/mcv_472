@@ -12,17 +12,10 @@ namespace Mvc_472_PortfolioC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Employee2
+    public partial class tblCity
     {
-        public int Id { get; set; }
-        public string FullName { get; set; }
-        public string Gender { get; set; }
-        public Nullable<int> Age { get; set; }
-        public Nullable<System.DateTime> HireDate { get; set; }
-        public string EmailAddress { get; set; }
-        public Nullable<int> Salary { get; set; }
-        public string PersonalWebSite { get; set; }
-        public string Photo { get; set; }
-        public string AlternateText { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public bool IsSelected { get; set; }
     }
 }
