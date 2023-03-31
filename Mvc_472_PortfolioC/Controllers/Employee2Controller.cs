@@ -12,7 +12,8 @@ namespace Mvc_472_PortfolioC.Controllers
         // GET: Employee2
         public ActionResult Index()
         {
-            return View();
+            Sample2 dbContext = new Sample2();
+            return View(dbContext.Employee2.ToList());
         }
 
         // GET: Employee2/Details/5

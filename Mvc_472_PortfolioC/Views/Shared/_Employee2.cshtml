@@ -1,0 +1,26 @@
+﻿@using Mvc_472_PortfolioC.CustomHtmlHelpers
+@model Mvc_472_PortfolioC.Models.Employee2
+
+<table class="table">
+    <tr>
+        <td>
+            @Html.Image(@Model.Photo, @Model.AlternateText)
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td><b>Age:</b></td>
+                    <td>@Model.Age</td>
+                </tr>
+                <tr>
+                    <td><b>Gender:</b></td>
+                    <td>@Model.Gender</td>
+                </tr>
+                <tr>
+                    <td><b>Salary:</b></td>
+                    <td>@Model.Salary</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

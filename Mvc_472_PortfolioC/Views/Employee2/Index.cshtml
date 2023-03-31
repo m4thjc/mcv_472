@@ -1,0 +1,11 @@
+﻿@using Mvc_472_PortfolioC.CustomHtmlHelpers
+@model IEnumerable<Mvc_472_PortfolioC.Models.Employee2>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@foreach (var item in Model)
+{
+    @Html.Partial("_Employee2", item)
+}
