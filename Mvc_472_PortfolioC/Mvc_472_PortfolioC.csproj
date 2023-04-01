@@ -132,6 +132,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EfEmployeesController.cs" />
@@ -145,6 +146,9 @@
     <Compile Include="Models\CitiesViewModel.cs" />
     <Compile Include="Models\City.cs">
       <DependentUpon>EfEmployeeDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comment.cs">
+      <DependentUpon>SampleDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Company2.cs" />
@@ -299,6 +303,11 @@
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\Employee2\Index.cshtml" />
     <Content Include="Views\Shared\_Employee2.cshtml" />
+    <Content Include="Views\Comments\Create.cshtml" />
+    <Content Include="Views\Comments\Delete.cshtml" />
+    <Content Include="Views\Comments\Details.cshtml" />
+    <Content Include="Views\Comments\Edit.cshtml" />
+    <Content Include="Views\Comments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

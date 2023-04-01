@@ -13,6 +13,14 @@
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="IsSelected" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="tblComments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="500" />
+        </EntityType>
         <EntityType Name="tblDepartment">
           <Key>
             <PropertyRef Name="Id" />
@@ -61,6 +69,7 @@
         </Association>
         <EntityContainer Name="Models2StoreContainer">
           <EntitySet Name="tblCity" EntityType="Self.tblCity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblComments" EntityType="Self.tblComments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblDepartment" EntityType="Self.tblDepartment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblEmployee2" EntityType="Self.tblEmployee2" Schema="dbo" store:Type="Tables" />
@@ -97,6 +106,7 @@
             <End Role="tblDepartment" EntitySet="tblDepartments" />
             <End Role="tblEmployee" EntitySet="tblEmployees" />
           </AssociationSet>
+          <EntitySet Name="Comments" EntityType="Models2.Comment" />
         </EntityContainer>
         <EntityType Name="tblCity">
           <Key>
@@ -139,6 +149,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -188,6 +206,15 @@
                 <ScalarProperty Name="City" ColumnName="City" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="Models2.Comment">
+              <MappingFragment StoreEntitySet="tblComments">
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

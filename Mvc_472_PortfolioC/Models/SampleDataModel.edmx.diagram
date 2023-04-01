@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="Models2.tblDepartment" Width="1.5" PointX="3.75" PointY="1.25" />
         <EntityTypeShape EntityType="Models2.tblEmployee" Width="1.5" PointX="6" PointY="1" />
         <AssociationConnector Association="Models2.FK__tblEmploy__Depar__2A4B4B5E" />
+        <EntityTypeShape EntityType="Models2.Comment" Width="1.5" PointX="3.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
