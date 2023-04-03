@@ -35,6 +35,39 @@ namespace Mvc_472_PortfolioC.Controllers
             return View(employees);
         }
 
+        public ActionResult IndexSearch(string searchBy, string search)
+        {
+            bool useBuisnessLibrary = false;
+            List<Employee> employees;
+            if (useBuisnessLibrary)
+            {
+                employees = GetEmployeeListFromBusinessLayer();
+            }
+            else
+            {
+                EmployeeContext employeeContext = new EmployeeContext();
+                employees = employeeContext.Employees.ToList();
+
+                if(searchBy == "Gender")
+                {
+                    employees = employees.Where(x => x.Gender == search || search == "").ToList();
+                }
+                else
+                {
+                    employees = employees.Where(x => x.Name.StartsWith(search)).ToList();
+                }
+            }
+
+
+
+            //if (departmentId != null)
+            //{
+            //    employees = employees.Where(e => e.DepartmentID == departmentId).ToList();
+            //}
+
+            return View("~/Views/Employee/Index.cshtml", employees);
+        }
+
         public List<Employee> GetEmployeeListFromBusinessLayer()
         {
             List<Employee> employees;
