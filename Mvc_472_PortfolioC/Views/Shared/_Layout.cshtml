@@ -37,6 +37,15 @@
         @RenderBody()
         <hr />
         <footer>
+            @if (IsSectionDefined("testingSections"))
+            {
+                @RenderSection("testingSections", false)
+            }
+            else
+            {
+                <textarea>No footer buttons defined for this page</textarea>
+            }
+
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
