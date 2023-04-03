@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Mvc_472_PortfolioC.Models;
@@ -49,8 +50,26 @@ namespace Mvc_472_PortfolioC.Controllers
         [ValidateInput(false)]
         public ActionResult Create([Bind(Include = "Id,Name,Comments")] Comment comment)
         {
+           
+
+
             if (ModelState.IsValid)
             {
+                //video 56 selecting which html to be able to save as is, everything else gets html encoded. 
+                StringBuilder sbComments = new StringBuilder();
+                sbComments.Append(HttpUtility.HtmlEncode(comment.Comments)); //first allow html encoding of all tags
+
+                sbComments.Replace("&lt;b&gt;", "<b>"); //then replace the html encoded versions with the orginal versions
+                sbComments.Replace("&lt;/b&gt;", "</b>");
+                sbComments.Replace("&lt;u&gt;", "<u>");
+                sbComments.Replace("&lt;/u&gt;", "</u>");
+
+                comment.Comments = sbComments.ToString();
+
+                string strEncodedName = HttpUtility.HtmlEncode(comment.Name);
+                comment.Name = strEncodedName;
+
+
                 db.Comments.Add(comment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
