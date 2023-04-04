@@ -36,28 +36,60 @@ namespace Mvc_472_PortfolioC.Controllers
             return View(employees.ToPagedList(1, 3));
         }
 
-        public ActionResult IndexSearch(string searchBy, string search, int? page)
+        public ActionResult IndexSearch(string searchby, string search, int? page, string sortby)
         {
-            bool useBuisnessLibrary = false;
-            List<Employee> employees;
-            if (useBuisnessLibrary)
+
+            ViewBag.SortNameParameter = string.IsNullOrEmpty(sortby) ? "Name desc" : "";
+            ViewBag.SortGenderParameter = sortby == "Gender" ? "Gender desc" : "Gender";
+
+            EmployeeContext employeeContext = new EmployeeContext();
+            var  employees = employeeContext.Employees.AsQueryable();
+
+            if (searchby == "Gender")
             {
-                employees = GetEmployeeListFromBusinessLayer();
+                employees = employees.Where(x => x.Gender == search || search == "");
             }
             else
             {
-                EmployeeContext employeeContext = new EmployeeContext();
-                employees = employeeContext.Employees.ToList();
-
-                if(searchBy == "Gender")
-                {
-                    employees = employees.Where(x => x.Gender == search || search == "").ToList();
-                }
-                else
-                {
-                    employees = employees.Where(x => search == null || search == "" || x.Name.StartsWith(search)).ToList();
-                }
+                employees = employees.Where(x => search == null || search == "" || x.Name.StartsWith(search));
             }
+
+            switch (sortby)
+            {
+                case "Name desc":
+                    employees = employees.OrderByDescending(x => x.Name);
+                    break;
+                case "Gender desc":
+                    employees = employees.OrderByDescending(x => x.Gender);
+                    break;
+                case "Gender":
+                    employees = employees.OrderBy(x => x.Gender);
+                    break;
+                default:
+                    employees = employees.OrderBy(x => x.Name);
+                    break;
+            }
+
+            //bool useBuisnessLibrary = false;
+            //List<Employee> employees;
+            //if (useBuisnessLibrary)
+            //{
+            //    employees = GetEmployeeListFromBusinessLayer();
+            //}
+            //else
+            //{
+            //    EmployeeContext employeeContext = new EmployeeContext();
+            //    employees = employeeContext.Employees.ToList();
+
+            //    if(searchBy == "Gender")
+            //    {
+            //        employees = employees.Where(x => x.Gender == search || search == "").ToList();
+            //    }
+            //    else
+            //    {
+            //        employees = employees.Where(x => search == null || search == "" || x.Name.StartsWith(search)).ToList();
+            //    }
+            //}
 
 
 
