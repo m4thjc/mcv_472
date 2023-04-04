@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Mvc_472_PortfolioC.Models;
 using JMBusinessLayer;
+using PagedList;
 
 namespace Mvc_472_PortfolioC.Controllers
 {
@@ -32,10 +33,10 @@ namespace Mvc_472_PortfolioC.Controllers
             }
        
 
-            return View(employees);
+            return View(employees.ToPagedList(1, 3));
         }
 
-        public ActionResult IndexSearch(string searchBy, string search)
+        public ActionResult IndexSearch(string searchBy, string search, int? page)
         {
             bool useBuisnessLibrary = false;
             List<Employee> employees;
@@ -54,7 +55,7 @@ namespace Mvc_472_PortfolioC.Controllers
                 }
                 else
                 {
-                    employees = employees.Where(x => x.Name.StartsWith(search)).ToList();
+                    employees = employees.Where(x => search == null || search == "" || x.Name.StartsWith(search)).ToList();
                 }
             }
 
@@ -65,7 +66,7 @@ namespace Mvc_472_PortfolioC.Controllers
             //    employees = employees.Where(e => e.DepartmentID == departmentId).ToList();
             //}
 
-            return View("~/Views/Employee/Index.cshtml", employees);
+            return View("~/Views/Employee/Index.cshtml", employees.ToPagedList(page ?? 1, 3));
         }
 
         public List<Employee> GetEmployeeListFromBusinessLayer()

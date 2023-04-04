@@ -1,5 +1,8 @@
-﻿@model IEnumerable<Mvc_472_PortfolioC.Models.Employee>
+﻿@model IPagedList<Mvc_472_PortfolioC.Models.Employee>
 @using System.Web
+@using PagedList
+@using PagedList.Mvc
+
 @{
     ViewBag.Title = "Index";
 }
@@ -24,19 +27,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.First().Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Gender)
+            @Html.DisplayNameFor(model => model.First().Gender)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.City)
+            @Html.DisplayNameFor(model => model.First().City)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DepartmentID)
+            @Html.DisplayNameFor(model => model.First().DepartmentID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateOfBirth)
+            @Html.DisplayNameFor(model => model.First().DateOfBirth)
         </th>
         <th></th>
     </tr>
@@ -76,4 +79,6 @@
     }
 
 </table>
+@Html.PagedListPager(Model, page => Url.Action("IndexSearch", new { page = page, searchby = Request.QueryString["searchBy"], search = Request.QueryString["search"] }),
+    new PagedListRenderOptions() {Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })
 @Html.ActionLink("See all Departments", "Index", "Department")
