@@ -180,10 +180,14 @@ namespace Mvc_472_PortfolioC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(IEnumerable<int> employeeIdsToDelete)
         {
-            EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
-            employeeBusinessLayer.DeleteEmployee(id);
+            //EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
+            
+
+            EmployeeContext employeeContext = new EmployeeContext();
+            employeeContext.Employees.RemoveRange(employeeContext.Employees.Where(x => employeeIdsToDelete.Contains(x.EmployeeId)));
+            employeeContext.SaveChanges();
             return RedirectToAction("Index");
         }
 

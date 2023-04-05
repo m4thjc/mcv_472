@@ -16,21 +16,21 @@
 <p>
     @using (Html.BeginForm("IndexSearch", "Employee", FormMethod.Get))
     {
-        <b> Search by: </b> 
-        @Html.RadioButton("Searchby", "Name", true) <text>Name</text> @Html.RadioButton("Searchby", "Gender") <text>Gender</text> 
+        <b> Search by: </b>
+        @Html.RadioButton("Searchby", "Name", true) <text>Name</text> @Html.RadioButton("Searchby", "Gender") <text>Gender</text>
         <br />
         @Html.TextBox("search") <input type="submit" value="search" />
     }
 
-</p> 
+</p>
 
 <table class="table">
     <tr>
         <th>
-            @Html.ActionLink("Name", "IndexSearch", new { sortby = ViewBag.SortNameParameter, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] }  )
+            @Html.ActionLink("Name", "IndexSearch", new { sortby = ViewBag.SortNameParameter, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] })
         </th>
         <th>
-            @Html.ActionLink("Gender", "IndexSearch", new { sortby = ViewBag.SortGenderParameter,  searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] })
+            @Html.ActionLink("Gender", "IndexSearch", new { sortby = ViewBag.SortGenderParameter, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.First().City)
@@ -47,10 +47,10 @@
     {
         <tr><td colspan="4">No rows match search Criteria</td></tr>
     }
-            @foreach (var item in Model)
+    @foreach (var item in Model)
     {
-                using (Html.BeginForm("Delete", "Employee", new { id = item.EmployeeId }))
-                {
+        using (Html.BeginForm("Delete", "Employee", new { id = item.EmployeeId }))
+        {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
@@ -80,5 +80,28 @@
 
 </table>
 @Html.PagedListPager(Model, page => Url.Action("IndexSearch", new { page = page, searchby = Request.QueryString["searchBy"], search = Request.QueryString["search"], sortby = Request.QueryString["sortby"] }),
-    new PagedListRenderOptions() {Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })
+    new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })
 @Html.ActionLink("See all Departments", "Index", "Department")
+
+
+@using (Html.BeginForm("Delete", "Employee", FormMethod.Post))
+ {
+<table class="table">
+    <thead>
+        <tr>
+            <th>Select
+            </th>
+            <th>Name
+            </th>
+            <th>Gender
+            </th>
+            <th>City
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.EditorForModel()
+    </tbody>
+</table>
+<input type="submit" value="Delete Selected Employees" />
+ }
