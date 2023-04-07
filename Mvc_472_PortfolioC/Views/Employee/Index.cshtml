@@ -6,6 +6,54 @@
 @{
     ViewBag.Title = "Index";
 }
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+@*<script type="text/javascript" language="javascript">
+    $(function () {
+        $("#checkall").click(function () {
+            $("input[name='employeeIdsToDelete']").attr("checked", this.checked);
+        });
+
+        $("input[name='employeeIdsToDelete']").click(function () {
+            if ($("input[name='employeeIdsToDelete']").length == $("input[name='employeeIdsToDelete']:checked").length) {
+                $("#checkall").attr("checked", "checked")
+            } else {
+                $("#checkall").removeAttr("checked");            
+            }
+        });
+
+    });
+
+</script>*@
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#chkAll").click(function () {
+            $("input[name='employeeIdsToDelete']").prop("checked", this.checked);
+        });
+
+        $("input[name='employeeIdsToDelete']").click(function () {
+            //debugger;
+            if ($("input[name='employeeIdsToDelete']").length == $("input[name='employeeIdsToDelete']:checked").length) {
+                $("#chkAll").prop("checked", true);
+            }
+            else {
+                $("#chkAll").prop("checked", false);
+            }
+        });
+
+        $("#btnSubmit").click(function () {
+            var count = $("input[name='employeeIdsToDelete']:checked").length;
+            if (count == 0) {
+                alert("No rows selected to delete");
+                return false;
+            } else {
+                return confirm(count + " rows will be deleted.");
+            }
+        });
+        
+    });
+</script>
 
 <h2>Index</h2>
 
@@ -84,12 +132,13 @@
 @Html.ActionLink("See all Departments", "Index", "Department")
 
 
+
 @using (Html.BeginForm("Delete", "Employee", FormMethod.Post))
  {
 <table class="table">
     <thead>
         <tr>
-            <th>Select
+            <th><input type="checkbox" id="chkAll" />
             </th>
             <th>Name
             </th>
@@ -103,5 +152,5 @@
         @Html.EditorForModel()
     </tbody>
 </table>
-<input type="submit" value="Delete Selected Employees" />
+<input type="submit" id="btnSubmit" value="Delete Selected Employees" />
  }
