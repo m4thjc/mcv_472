@@ -10,7 +10,16 @@ namespace Mvc_472_PortfolioC.Controllers
     {
         public ActionResult Index()
         {
+            throw new Exception("Something went wrong");
             return View();
+        }
+
+        [ChildActionOnly]
+        public ActionResult Countries(List<string> countryNames)
+        {
+            countryNames = countryNames ?? new List<string>() { "test", "d" };
+
+            return View(countryNames);
         }
 
         public ActionResult About()

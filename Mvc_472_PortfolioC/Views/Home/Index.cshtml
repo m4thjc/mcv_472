@@ -8,6 +8,12 @@
     <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
+@Html.Action("Countries", new {countryNames = new List<string> {"USA", "UK", "India", "Canada" } })
+@*Render action writes directly to the output stream (more performant) and requires the syntax below *@
+@{ 
+    Html.RenderAction("Countries", new { countryNames = new List<string> { "USA", "UK", "India", "Canada" } });
+}
+
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
