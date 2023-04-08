@@ -11,8 +11,10 @@ namespace Mvc_472_PortfolioC.Controllers
 {
     public class EmployeeController : Controller
     {
+        [OutputCache(Duration =10)]
         public ActionResult Index(int? departmentId)
         {
+            System.Threading.Thread.Sleep(2000);
             bool useBuisnessLibrary = false;
             List<Employee> employees;
             if (useBuisnessLibrary)
@@ -34,6 +36,16 @@ namespace Mvc_472_PortfolioC.Controllers
        
 
             return View(employees.ToPagedList(1, 3));
+        }
+
+        [ChildActionOnly]
+        [OutputCache(Duration = 10)]
+        public string GetEmployeeCount()
+        {
+            EmployeeContext employeeContext = new EmployeeContext();
+
+
+            return "Employee count = " + employeeContext.Employees.Count().ToString() + " " + "As of: " + DateTime.Now.ToString();
         }
 
         public ActionResult IndexSearch(string searchby, string search, int? page, string sortby)

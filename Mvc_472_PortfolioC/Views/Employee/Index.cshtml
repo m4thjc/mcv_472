@@ -8,22 +8,22 @@
 }
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 @*<script type="text/javascript" language="javascript">
-    $(function () {
-        $("#checkall").click(function () {
-            $("input[name='employeeIdsToDelete']").attr("checked", this.checked);
+        $(function () {
+            $("#checkall").click(function () {
+                $("input[name='employeeIdsToDelete']").attr("checked", this.checked);
+            });
+
+            $("input[name='employeeIdsToDelete']").click(function () {
+                if ($("input[name='employeeIdsToDelete']").length == $("input[name='employeeIdsToDelete']:checked").length) {
+                    $("#checkall").attr("checked", "checked")
+                } else {
+                    $("#checkall").removeAttr("checked");
+                }
+            });
+
         });
 
-        $("input[name='employeeIdsToDelete']").click(function () {
-            if ($("input[name='employeeIdsToDelete']").length == $("input[name='employeeIdsToDelete']:checked").length) {
-                $("#checkall").attr("checked", "checked")
-            } else {
-                $("#checkall").removeAttr("checked");            
-            }
-        });
-
-    });
-
-</script>*@
+    </script>*@
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -51,7 +51,7 @@
                 return confirm(count + " rows will be deleted.");
             }
         });
-        
+
     });
 </script>
 
@@ -131,26 +131,35 @@
     new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })
 @Html.ActionLink("See all Departments", "Index", "Department")
 
+<br />
 
+@{
+    Html.RenderAction("GetEmployeeCount", "Employee");
+}
+<br />
 
 @using (Html.BeginForm("Delete", "Employee", FormMethod.Post))
- {
-<table class="table">
-    <thead>
-        <tr>
-            <th><input type="checkbox" id="chkAll" />
-            </th>
-            <th>Name
-            </th>
-            <th>Gender
-            </th>
-            <th>City
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @Html.EditorForModel()
-    </tbody>
-</table>
-<input type="submit" id="btnSubmit" value="Delete Selected Employees" />
- }
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="chkAll" />
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                    City
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.EditorForModel()
+        </tbody>
+    </table>
+    <input type="submit" id="btnSubmit" value="Delete Selected Employees" />
+}
