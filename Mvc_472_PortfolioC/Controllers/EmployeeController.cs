@@ -6,12 +6,14 @@ using System.Web.Mvc;
 using Mvc_472_PortfolioC.Models;
 using JMBusinessLayer;
 using PagedList;
+using Mvc_472_PortfolioC.Common;
 
 namespace Mvc_472_PortfolioC.Controllers
 {
     public class EmployeeController : Controller
     {
         [OutputCache(Duration =10)]
+        [TrackExecutionTime]
         public ActionResult Index(int? departmentId)
         {
             System.Threading.Thread.Sleep(2000);
