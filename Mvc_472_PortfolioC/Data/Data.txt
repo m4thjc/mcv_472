@@ -19,3 +19,113 @@ System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExec
 Employee -> Index -> OnResultExecuting 	- 4/8/2023 5:51:03 PM
 Employee -> Index -> OnResultExecuted 	- 4/8/2023 5:51:05 PM
 ----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuting 	- 4/8/2023 6:30:55 PM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuted 	- 4/8/2023 6:30:57 PM
+Home -> Index -> OnResultExecuting 	- 4/8/2023 6:30:57 PM
+
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/8/2023 6:30:57 PM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/8/2023 6:32:35 PM
+Home -> Countries -> OnResultExecuting 	- 4/8/2023 6:32:35 PM
+Home -> Countries -> OnResultExecuted 	- 4/8/2023 6:32:35 PM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/8/2023 6:32:35 PM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/8/2023 6:32:36 PM
+Home -> Countries -> OnResultExecuting 	- 4/8/2023 6:32:36 PM
+Home -> Countries -> OnResultExecuted 	- 4/8/2023 6:32:36 PM
+----------------------------------------------------------Home -> Index -> OnResultExecuted 	- 4/8/2023 6:32:37 PM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuting 	- 4/8/2023 6:34:45 PM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuted 	- 4/8/2023 6:35:39 PM
+Home -> Index -> OnResultExecuting 	- 4/8/2023 6:35:39 PM
+
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/8/2023 6:35:40 PM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/8/2023 6:35:43 PM
+Home -> Countries -> OnResultExecuting 	- 4/8/2023 6:35:43 PM
+Home -> Countries -> OnResultExecuted 	- 4/8/2023 6:35:43 PM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/8/2023 6:35:43 PM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/8/2023 6:35:44 PM
+Home -> Countries -> OnResultExecuting 	- 4/8/2023 6:35:44 PM
+Home -> Countries -> OnResultExecuted 	- 4/8/2023 6:35:44 PM
+----------------------------------------------------------Home -> Index -> OnResultExecuted 	- 4/8/2023 6:35:45 PM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuting 	- 4/9/2023 7:37:01 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuted 	- 4/9/2023 7:37:03 AM
+Home -> Index -> OnResultExecuting 	- 4/9/2023 7:37:03 AM
+
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/9/2023 7:37:03 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/9/2023 7:37:04 AM
+Home -> Countries -> OnResultExecuting 	- 4/9/2023 7:37:04 AM
+Home -> Countries -> OnResultExecuted 	- 4/9/2023 7:37:04 AM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/9/2023 7:37:04 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/9/2023 7:37:05 AM
+Home -> Countries -> OnResultExecuting 	- 4/9/2023 7:37:05 AM
+Home -> Countries -> OnResultExecuted 	- 4/9/2023 7:37:05 AM
+----------------------------------------------------------Home -> Index -> OnResultExecuted 	- 4/9/2023 7:37:06 AM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuting 	- 4/9/2023 7:37:08 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuted 	- 4/9/2023 7:37:11 AM
+Employee -> Index -> OnResultExecuting 	- 4/9/2023 7:37:11 AM
+Employee -> Index -> OnResultExecuted 	- 4/9/2023 7:37:16 AM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuting 	- 4/9/2023 7:46:23 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuted 	- 4/9/2023 7:46:24 AM
+Home -> Index -> OnResultExecuting 	- 4/9/2023 7:46:24 AM
+
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/9/2023 7:46:25 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/9/2023 7:46:26 AM
+Home -> Countries -> OnResultExecuting 	- 4/9/2023 7:46:26 AM
+Home -> Countries -> OnResultExecuted 	- 4/9/2023 7:46:26 AM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/9/2023 7:46:26 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/9/2023 7:46:27 AM
+Home -> Countries -> OnResultExecuting 	- 4/9/2023 7:46:27 AM
+Home -> Countries -> OnResultExecuted 	- 4/9/2023 7:46:27 AM
+----------------------------------------------------------Home -> Index -> OnResultExecuted 	- 4/9/2023 7:46:27 AM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuting 	- 4/9/2023 7:46:31 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuted 	- 4/9/2023 7:46:34 AM
+Employee -> Index -> OnResultExecuting 	- 4/9/2023 7:46:34 AM
+Employee -> Index -> OnResultExecuted 	- 4/9/2023 7:46:37 AM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuting 	- 4/9/2023 8:09:53 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuted 	- 4/9/2023 8:09:55 AM
+Home -> Index -> OnResultExecuting 	- 4/9/2023 8:09:55 AM
+
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/9/2023 8:09:56 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/9/2023 8:09:57 AM
+Home -> Countries -> OnResultExecuting 	- 4/9/2023 8:09:57 AM
+Home -> Countries -> OnResultExecuted 	- 4/9/2023 8:09:57 AM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/9/2023 8:09:57 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/9/2023 8:09:58 AM
+Home -> Countries -> OnResultExecuting 	- 4/9/2023 8:09:58 AM
+Home -> Countries -> OnResultExecuted 	- 4/9/2023 8:09:58 AM
+----------------------------------------------------------Home -> Index -> OnResultExecuted 	- 4/9/2023 8:09:58 AM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuting 	- 4/9/2023 8:10:01 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuted 	- 4/9/2023 8:10:04 AM
+Employee -> Index -> OnResultExecuting 	- 4/9/2023 8:10:04 AM
+Employee -> Index -> OnResultExecuted 	- 4/9/2023 8:10:06 AM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuting 	- 4/9/2023 8:12:21 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuted 	- 4/9/2023 8:12:23 AM
+Home -> Index -> OnResultExecuting 	- 4/9/2023 8:12:23 AM
+
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/9/2023 8:12:24 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/9/2023 8:12:24 AM
+Home -> Countries -> OnResultExecuting 	- 4/9/2023 8:12:24 AM
+Home -> Countries -> OnResultExecuted 	- 4/9/2023 8:12:24 AM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/9/2023 8:12:24 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/9/2023 8:12:25 AM
+Home -> Countries -> OnResultExecuting 	- 4/9/2023 8:12:25 AM
+Home -> Countries -> OnResultExecuted 	- 4/9/2023 8:12:25 AM
+----------------------------------------------------------Home -> Index -> OnResultExecuted 	- 4/9/2023 8:12:26 AM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuting 	- 4/9/2023 8:12:28 AM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuted 	- 4/9/2023 8:12:31 AM
+Employee -> Index -> OnResultExecuting 	- 4/9/2023 8:12:31 AM
+Employee -> Index -> OnResultExecuted 	- 4/9/2023 8:12:34 AM
+----------------------------------------------------------

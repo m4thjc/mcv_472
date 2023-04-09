@@ -31,10 +31,14 @@ namespace Mvc_472_PortfolioC.Models
         [Required]
         public string Gender { get; set; }
         [Required]
+        [StringLength(10, MinimumLength = 2)]
         public string City { get; set; }
         [Required]
+        [Range(1,500)]
         public int DepartmentID { get; set; }
         [Required]
+        [Range(typeof(DateTime), "01/01/1940","1/1/2020")]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime? DateOfBirth { get; set; }
     }
 }
