@@ -14,12 +14,14 @@ namespace Mvc_472_PortfolioC.Models
 
     public class EfEmployeeMetaData
     {
+        
         public string Name { get; set; }
 
         [Required]
         public string Gender { get; set; }
 
         [Required]
+        [RegularExpression(@"^(([A-za-z]+[\\s]{1}[A-za-z+)|([A-Za-z]+))$", ErrorMessage = "Please enter a valid City name")]
         public string City { get; set; }
 
         [Required]
