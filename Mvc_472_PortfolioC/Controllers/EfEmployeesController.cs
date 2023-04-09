@@ -97,7 +97,7 @@ namespace Mvc_472_PortfolioC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Gender,City,DepartmentId,EmployeeId,DateOfBirth")] EfEmployee efEmployee)
+        public ActionResult Edit([Bind(Include = "Gender,City,ConfirmCity,DepartmentId,EmployeeId,DateOfBirth")] EfEmployee efEmployee)
         {
             EfEmployee employeeFromDb = db.EfEmployees.Single(x => x.EmployeeId == efEmployee.EmployeeId);
             efEmployee.Name = employeeFromDb.Name;
@@ -106,6 +106,7 @@ namespace Mvc_472_PortfolioC.Controllers
             employeeFromDb.City = efEmployee.City;
             employeeFromDb.DepartmentId = efEmployee.DepartmentId;
             employeeFromDb.DateOfBirth = efEmployee.DateOfBirth;
+            employeeFromDb.ConfirmCity = efEmployee.ConfirmCity;
 
             efEmployee.Name = employeeFromDb.Name;
             if (ModelState.IsValid)

@@ -10,6 +10,8 @@ namespace Mvc_472_PortfolioC.Models
     [MetadataType(typeof(EfEmployeeMetaData))]
     public partial class EfEmployee
     {
+        [Compare("City")]
+        public string ConfirmCity { get; set; }
     }
 
     public class EfEmployeeMetaData
