@@ -5,6 +5,7 @@ using System.Web;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Mvc_472_PortfolioC.Common;
 
 namespace Mvc_472_PortfolioC.Models
 {
@@ -37,7 +38,6 @@ namespace Mvc_472_PortfolioC.Models
         [Range(1,500)]
         public int DepartmentID { get; set; }
         [Required]
-        [Range(typeof(DateTime), "01/01/1940","1/1/2020")]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime? DateOfBirth { get; set; }
     }

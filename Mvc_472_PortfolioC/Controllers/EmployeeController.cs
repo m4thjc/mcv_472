@@ -176,11 +176,12 @@ namespace Mvc_472_PortfolioC.Controllers
             EmployeeBusinessLayer employeeBusinessLayer = new EmployeeBusinessLayer();
             BuisnessLibEmployee employee = employeeBusinessLayer.Employees.Single(emp => emp.EmployeeId == id);
 
-            UpdateModel<IEmployee>(employee);
+           
                        
             if (ModelState.IsValid)
             {
-                
+                UpdateModel<IEmployee>(employee);
+
                 employeeBusinessLayer.SaveEmployee(employee);
 
                 return RedirectToAction("Index");
