@@ -6,6 +6,17 @@
 
 <h2>Edit</h2>
 
+<script type="text/javascript" language="javascript">
+    function MouseOver(controlId) {
+        var control = document.getElementById(controlId);
+        control.style.backgroundColor = 'red';
+    }
+
+    function MouseOut(controlId) {
+        var control = document.getElementById(controlId);
+        control.style.backgroundColor = 'grey';
+    }
+</script>
 
 @using (Html.BeginForm())
 {
@@ -51,7 +62,7 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div id="agroup" class="form-group" >
         @Html.LabelFor(model => model.DepartmentId, "DepartmentId", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownList("DepartmentId", null, "Select Department", htmlAttributes: new { @class = "form-control" })
@@ -71,7 +82,8 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+            <input id="btnSubmit" type="submit" value="Save" onmouseover="MouseOver(agroup)" onmouseout="MouseOut(agroup)"/> @*class="btn btn-default"*@
+            @*onmouseover="MouseOver(btnSubmit)" onmouseout="MouseOut(btnSubmit)"*@
         </div>
     </div>
 </div>
