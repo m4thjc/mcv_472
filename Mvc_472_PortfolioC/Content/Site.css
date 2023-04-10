@@ -16,6 +16,10 @@
     white-space: normal;
 }
 
+.input-validation-error {
+    border-color : red;
+}
+
 .btn-secondary {
     color: #fff;
     background-color: #6c757d;
