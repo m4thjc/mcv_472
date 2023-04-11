@@ -10595,4 +10595,15 @@ if ( !noGlobal ) {
 
 
 return jQuery;
-} );
+});
+
+jQuery(document).ready(function () {
+
+	jQuery('#btnSubmit').mouseover(function () {
+		jQuery('#btnSubmit').css("backgroundColor", "red");
+	});
+
+	jQuery('#btnSubmit').mouseout(function () {
+		jQuery('#btnSubmit').css("backgroundColor", "blue");
+	});
+});

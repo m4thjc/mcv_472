@@ -439,3 +439,18 @@ Home -> Countries -> OnResultExecuting 	- 4/9/2023 8:40:40 PM
 Home -> Countries -> OnResultExecuted 	- 4/9/2023 8:40:40 PM
 ----------------------------------------------------------Home -> Index -> OnResultExecuted 	- 4/9/2023 8:40:40 PM
 ----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuting 	- 4/10/2023 9:13:06 PM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Index -> OnActionExecuted 	- 4/10/2023 9:13:06 PM
+Home -> Index -> OnResultExecuting 	- 4/10/2023 9:13:06 PM
+
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/10/2023 9:13:07 PM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/10/2023 9:13:07 PM
+Home -> Countries -> OnResultExecuting 	- 4/10/2023 9:13:07 PM
+Home -> Countries -> OnResultExecuted 	- 4/10/2023 9:13:07 PM
+----------------------------------------------------------
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuting 	- 4/10/2023 9:13:07 PM
+System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor -> Countries -> OnActionExecuted 	- 4/10/2023 9:13:07 PM
+Home -> Countries -> OnResultExecuting 	- 4/10/2023 9:13:07 PM
+Home -> Countries -> OnResultExecuted 	- 4/10/2023 9:13:07 PM
+----------------------------------------------------------Home -> Index -> OnResultExecuted 	- 4/10/2023 9:13:08 PM
+----------------------------------------------------------

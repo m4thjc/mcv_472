@@ -5,8 +5,8 @@
 }
 
 <h2>Edit</h2>
-@*<script src="~/Scripts/CustomJavascript.js"></script>*@
-<script type="text/javascript" language="javascript">
+<script src="~/Scripts/CustomJavascript.js"></script>
+@*<script type="text/javascript" language="javascript">
     function MouseOver(controlId) {
         var control = document.getElementById(controlId);
         control.style.backgroundColor = 'red';
@@ -16,7 +16,7 @@
         var control = document.getElementById(controlId);
         control.style.backgroundColor = 'grey';
     }
-</script>
+</script>*@
 
 @using (Html.BeginForm())
 {
@@ -82,7 +82,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input id="btnSubmit" type="submit" value="Save" onmouseover="MouseOver('btnSubmit')" onmouseout="MouseOut('btnSubmit')" /> 
+                <input id="btnSubmit" type="submit" value="Save" /> 
             </div>
         </div>
     </div>
