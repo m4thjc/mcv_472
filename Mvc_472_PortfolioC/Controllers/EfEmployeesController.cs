@@ -58,7 +58,7 @@ namespace Mvc_472_PortfolioC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name,Gender,City,DepartmentId,EmployeeId,DateOfBirth")] EfEmployee efEmployee)
+        public ActionResult Create([Bind(Include = "Name,Gender,City,ConfirmCity,DepartmentId,EmployeeId,DateOfBirth")] EfEmployee efEmployee)
         {
             if (string.IsNullOrEmpty(efEmployee.Name))
             {
@@ -143,6 +143,11 @@ namespace Mvc_472_PortfolioC.Controllers
             db.EfEmployees.Remove(efEmployee);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public JsonResult IsUserNameAvailable(string Name)
+        {
+            return Json(!db.EfEmployees.Any(x => x.Name == Name),JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

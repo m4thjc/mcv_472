@@ -4,26 +4,27 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Mvc_472_PortfolioC.Models
 {
     [MetadataType(typeof(EfEmployeeMetaData))]
     public partial class EfEmployee
     {
-        [Compare("City")]
+        [System.ComponentModel.DataAnnotations.Compare("City")]
         public string ConfirmCity { get; set; }
     }
 
     public class EfEmployeeMetaData
     {
-        
+        //[Remote("IsUserNameAvailable", "Home", ErrorMessage = "That name is taken.")]
         public string Name { get; set; }
 
         [Required]
         public string Gender { get; set; }
 
         [Required]
-        [RegularExpression(@"^(([A-za-z]+[\\s]{1}[A-za-z+)|([A-Za-z]+))$", ErrorMessage = "Please enter a valid City name")]
+        [RegularExpression("^[A-Za-z]+$", ErrorMessage = "Please enter a valid City name")]
         public string City { get; set; }
 
         [Required]
