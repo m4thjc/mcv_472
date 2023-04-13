@@ -17,7 +17,8 @@ namespace Mvc_472_PortfolioC.Models
 
     public class EfEmployeeMetaData
     {
-        [Remote("IsUserNameAvailable", "EfEmployees", ErrorMessage = "That name is taken.")]
+        //[Remote("IsUserNameAvailable", "EfEmployees", ErrorMessage = "That name is taken.")]
+        [RemoteClientServer("IsUserNameAvailable", "EfEmployees", ErrorMessage = "That name is taken.")]
         public string Name { get; set; }
 
         [Required]

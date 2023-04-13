@@ -61,11 +61,11 @@ namespace Mvc_472_PortfolioC.Controllers
         public ActionResult Create([Bind(Include = "Name,Gender,City,ConfirmCity,DepartmentId,EmployeeId,DateOfBirth")] EfEmployee efEmployee)
         {
 
-            var nameTaken = db.EfEmployees.Any(x => x.Name == efEmployee.Name);
-            if (nameTaken)
-            {
-                ModelState.AddModelError("Name", "That name is taken");
-            }
+            //var nameTaken = db.EfEmployees.Any(x => x.Name == efEmployee.Name);
+            //if (nameTaken)
+            //{
+            //    ModelState.AddModelError("Name", "That name is taken");
+            //}
 
             if (string.IsNullOrEmpty(efEmployee.Name))
             {
